@@ -1,5 +1,7 @@
 package models;
 
+import winningstrategies.BotPlayingStrategy;
+
 import java.util.Scanner;
 
 public class Bot extends Player{
