@@ -40,6 +40,7 @@ public void printBoard()
     }
 
     public ArrayList<ArrayList<Cell>> getBoard() {
+
         return board;
     }
 

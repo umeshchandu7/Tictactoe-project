@@ -66,6 +66,11 @@ public class TicToeGame {
             playerIndex++;
             playerIndex = playerIndex % players.size();
             Move movePlayed = gameController.executeMove(game, players.get(playerIndex));
+            gameController.displayBoard(game);
+            System.out.println("if u want to undo the move enter Y/N");
+            String c = sc.next();
+            if(c.equals("Y"))
+              movePlayed =  gameController.undoTheMove(movePlayed,game);
             Player winner = gameController.checkWinner(game, movePlayed);
             if(winner != null){
                 gameController.displayBoard(game);

@@ -9,6 +9,7 @@ public class Cell {
     public Cell(int row, int col) {
         this.row = row;
         this.col = col;
+        this.cellState = cellState.EMPTY;
     }
 
     public Cell(int row, int col, CellState cellState) {
@@ -27,15 +28,15 @@ public class Cell {
     {
         if(player == null)
         {
-            System.out.println("||");
+            System.out.print("| |");
         }
         else if(cellState.equals(cellState.BLOCKED))
         {
-            System.out.println("||||");
+            System.out.print("||||");
         }
         else
         {
-            System.out.println("|"+ player.getSymbol().getSymbolChar()+ "|");
+            System.out.print("|"+player.getSymbol().getSymbolChar()+"|");
         }
     }
 

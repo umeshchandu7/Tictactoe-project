@@ -26,6 +26,15 @@ public class Bot extends Player{
     public void setBotDifficultyLevel(BotDifficultyLevel botDifficutLevel) {
         this.botDifficultyLevel = botDifficultyLevel;
     }
+    public Move undoMove(Board board,Move move)
+    {
+        Cell cell = move.getCell();
+        int r = cell.getRow();
+        int c = cell.getCol();
+        board.getBoard().get(r).get(c).setPlayer(null);
+        board.getBoard().get(r).get(c).setCellState(CellState.EMPTY);
+        return makeMove(board);
+    }
 
     public BotPlayingStrategy getBotPlayingStrategy() {
         return botPlayingStrategy;

@@ -37,6 +37,11 @@ public class Game {
     public List<Move> getMoves() {
         return moves;
     }
+    public void setMoves(Move move)
+    {
+       List<Move> k = getMoves();
+       k.add(move);
+    }
 
     public Player getWinner() {
         return winner;

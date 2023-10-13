@@ -70,6 +70,15 @@ public class Player {
    //
        board.getBoard().get(row).get(col).setPlayer(this);
        board.getBoard().get(row).get(col).setCellState(CellState.FILLED);
-       return new Move(new Cell(row,col,this),this);
+       return new  Move(new Cell(row,col,this),this);
+   }
+public Move undoMove(Board board,Move move)
+{
+    Cell cell = move.getCell();
+    int r = cell.getRow();
+    int c = cell.getCol();
+    board.getBoard().get(r).get(c).setPlayer(null);
+    board.getBoard().get(r).get(c).setCellState(CellState.EMPTY);
+    return makeMove(board);
 }
 }

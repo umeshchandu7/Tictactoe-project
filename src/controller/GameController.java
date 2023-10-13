@@ -49,6 +49,10 @@ public class GameController {
         }
         return null;
     }
+    public Move undoTheMove(Move move,Game game)
+    {
+        return move.getPlayer().undoMove(game.getBoard(),move);
+    }
 
     public String getWinner(Game game){
         return game.getWinner().getName();
